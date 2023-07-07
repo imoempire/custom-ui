@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, Stack, Text } from "@chakra-ui/react";
-import { FcLock } from "react-icons/fc";
+import { RxButton } from "react-icons/rx";
 import ExampleUsage from "./Components/Examples/Index";
 import PropsTable from "./Components/Examples/PropsTable";
 import { ButtonProps } from "@/utils/PropsData";
@@ -14,7 +14,7 @@ export default function Buttons() {
           <Text fontSize={"4xl"} fontWeight="semibold">
             Buttons
           </Text>
-          <FcLock />
+          <RxButton size={40} />
         </Stack>
 
         <Stack

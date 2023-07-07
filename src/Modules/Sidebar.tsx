@@ -22,19 +22,11 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-  FiMenu,
-  FiBell,
-  FiChevronDown,
-} from "react-icons/fi";
+import { FiHome, FiMenu, FiChevronDown } from "react-icons/fi";
 import { RxButton } from "react-icons/rx";
 import { HiSelector } from "react-icons/hi";
-
+import { BsGithub } from "react-icons/bs";
+import { DiNpm } from "react-icons/di";
 import { IconType } from "react-icons";
 
 interface LinkItemProps {
@@ -102,7 +94,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          IO-UI
+          io-elements
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
@@ -111,7 +103,13 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           {link.name}
         </NavItem>
       ))}
-      <Text mb={"4"} mx="7" fontSize="1rem" fontFamily="monospace" fontWeight="bold">
+      <Text
+        mb={"4"}
+        mx="7"
+        fontSize="1rem"
+        fontFamily="monospace"
+        fontWeight="bold"
+      >
         Components
       </Text>
       {LinkItems2.map((link) => (
@@ -236,13 +234,24 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       </Text>
 
       <HStack spacing={{ base: "0", md: "6" }}>
-        <IconButton
-          size="lg"
-          variant="ghost"
-          aria-label="open menu"
-          icon={<FiBell />}
-        />
-        <Flex alignItems={"center"}>
+        <Link href="https://github.com/imoempire/IO-UI" isExternal>
+          <IconButton
+            size="lg"
+            variant="ghost"
+            aria-label="open menu"
+            icon={<BsGithub size={30} />}
+          />
+        </Link>
+
+        <Link href="https://www.npmjs.com/package/io-elements" isExternal>
+          <IconButton
+            size="lg"
+            variant="ghost"
+            aria-label="open menu"
+            icon={<DiNpm size={30} />}
+          />
+        </Link>
+        {/* <Flex alignItems={"center"}>
           <Menu>
             <MenuButton
               py={2}
@@ -283,7 +292,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuItem>Sign out</MenuItem>
             </MenuList>
           </Menu>
-        </Flex>
+        </Flex> */}
       </HStack>
     </Flex>
   );
