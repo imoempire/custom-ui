@@ -4,6 +4,7 @@ import { Button, Stack, Text } from "@chakra-ui/react";
 import { FcLock } from "react-icons/fc";
 import ExampleUsage from "./Components/Examples/Index";
 import PropsTable from "./Components/Examples/PropsTable";
+import { ButtonProps } from "@/utils/PropsData";
 
 export default function Buttons() {
   return (
@@ -41,7 +42,11 @@ export default function Buttons() {
             Usage
           </Text>
         </Stack>
-        <ExampleUsage title={"Default Button"} code={""} />
+        <ExampleUsage
+          src="https://snack.expo.dev/@imoempire/io-elements-button"
+          title={"Default Button"}
+          code={""}
+        />
       </Stack>
       <Stack bg={"#FFFFFF"} p="4" boxShadow="lg" m="4" borderRadius="sm">
         <Stack direction="row" alignItems="center">
@@ -49,7 +54,7 @@ export default function Buttons() {
             Props
           </Text>
         </Stack>
-        <PropsTable />
+        <PropsTable data={ButtonProps} caption={"Button Selector"} />
       </Stack>
     </>
   );

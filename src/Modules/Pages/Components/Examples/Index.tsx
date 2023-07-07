@@ -6,9 +6,10 @@ import CodeCard from "./Card";
 interface Props {
   title: string;
   code: string;
+  src?: string;
 }
 
-export default function ExampleUsage({ title, code }: Props) {
+export default function ExampleUsage({ title, code, src }: Props) {
   // COPY CODE
   const textareaRef = useRef(null);
 
@@ -42,7 +43,7 @@ export default function ExampleUsage({ title, code }: Props) {
        
       </Stack>
       <Stack direction={{ base: "column", md: "row" }}>
-        <CodeCard />
+        <CodeCard source={src} />
       </Stack>
     </Stack>
   );

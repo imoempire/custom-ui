@@ -2,11 +2,14 @@ import * as React from "react";
 import { Table, Thead, Tbody, Tr, Th, Td } from "./table";
 import { TableCaption } from "@chakra-ui/react";
 import "./table/styles.css";
-
-export default function PropsTable() {
+interface Props {
+  data: { name: string; required: string; type: string; default: string }[];
+  caption?: string;
+}
+export default function PropsTable({ data, caption }: Props) {
   return (
     <Table colorScheme="blue" size="sm">
-      <TableCaption>Props</TableCaption>
+      <TableCaption>{caption}</TableCaption>
       <Thead>
         <Tr>
           <Th>Prop Name</Th>
@@ -16,37 +19,18 @@ export default function PropsTable() {
         </Tr>
       </Thead>
       <Tbody>
-        <Tr>
-          <Td>title</Td>
-          <Td>String</Td>
-          <Td>false</Td>
-          <Td>`{" "}`</Td>
-        </Tr>
-        <Tr>
-          <Td>titltProps</Td>
-          <Td>TextStyle</Td>
-          <Td>false</Td>
-          <Td>
-          {"{"} {"}"}
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>containerStyles</Td>
-          <Td>
-            object:
-            {`backgroundColor, height, width, borderRadius, borderWidth, borderColor`}
-          </Td>
-          <Td>false</Td>
-          <Td>
-            {"{"} {"}"}
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>btnType</Td>
-          <Td>String (solid/outlined)</Td>
-          <Td>false</Td>
-          <Td>`solid`</Td>
-        </Tr>
+        {data?.map((item) => {
+          return (
+            <>
+              <Tr>
+                <Td>{item?.name}</Td>
+                <Td>{item?.type}</Td>
+                <Td>{item?.required}</Td>
+                <Td>{item?.default}</Td>
+              </Tr>
+            </>
+          );
+        })}
       </Tbody>
     </Table>
   );

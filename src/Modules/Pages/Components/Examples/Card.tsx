@@ -14,7 +14,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-export default function CodeCard() {
+interface Props {
+  source?: string | undefined;
+}
+
+export default function CodeCard({ source }: Props) {
   return (
     <Center py={6} w={"100%"}>
       <Stack
@@ -28,52 +32,11 @@ export default function CodeCard() {
         padding={4}
         h={500}
       >
-          <iframe
-            src="https://snack.expo.dev/@imoempire/io-ui-buttons"
-            style={{ width: "100%", height: "100%", border: "0" }}
-            sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts"
-          ></iframe>
-        {/* <Flex flex={1}>
-        </Flex> */}
-        {/* <Stack
-          flex={1}
-          flexDirection="column"
-          //   justifyContent="center"
-          alignItems="center"
-          p={1}
-          pt={2}
-        >
-          <Stack
-            p={1}
-            w="100%"
-            height={"10%"}
-            // bg={"red.200"}
-            flexDirection="row"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <div>Hello</div>
-            <Button
-              size="xs"
-              rightIcon={<CopyIcon />}
-              colorScheme="teal"
-              variant="outline"
-            >
-              copy
-            </Button>
-          </Stack>
-
-          <Stack
-            bg={"green.400"}
-            w={"90%"}
-            align={"center"}
-            justify={"center"}
-            direction={"row"}
-            mt={6}
-          >
-            <Button>Make</Button>
-          </Stack>
-        </Stack> */}
+        <iframe
+          src={source}
+          style={{ width: "100%", height: "100%", border: "0" }}
+          sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts"
+        ></iframe>
       </Stack>
     </Center>
   );
