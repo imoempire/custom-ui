@@ -1,13 +1,9 @@
 name: "Deploy"
 
 on:
-  release:
-    types:
-      - published
   push:
     branches:
-      - dev
-  workflow_dispatch:
+      - main
 
 jobs:
   vercel:
@@ -27,12 +23,12 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
         env:
-            CI: true
-  
+          CI: true
+
       - name: Build
         run: yarn build
         env:
-            CI: true
+          CI: true
 
       - name: "Deploy to Vercel"
         run: |
