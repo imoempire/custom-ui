@@ -22,12 +22,13 @@ export default function CopyCode({ title, code }: Props) {
 
   return (
     <Stack
+      border={"1px"}
       direction={{ base: "column", md: "row" }}
       justify={"space-between"}
       p="4"
       boxShadow="lg"
       m="4"
-      borderRadius="sm"
+      borderRadius="md"
     >
       <Stack direction="row" alignItems="center">
         <Code bg={"white"}>{code}</Code>

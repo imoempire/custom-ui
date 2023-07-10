@@ -1,13 +1,14 @@
 import React from "react";
 import { Stack, Text, Button } from "@chakra-ui/react";
 import { FcLock } from "react-icons/fc";
+import { nameList } from "@/src/Constants";
 
 export default function GetStartedCard() {
   return (
     <Stack p="4" boxShadow="lg" m="4" borderRadius="sm" bg={"#FFFFFF"}>
       <Stack direction="row" alignItems="center">
         <Text fontWeight="bold" fontSize="2xl">
-          What is io-ui Custom Components
+          What is {nameList.name} Custom Components
         </Text>
         <FcLock />
       </Stack>
