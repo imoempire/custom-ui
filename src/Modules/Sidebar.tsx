@@ -25,9 +25,10 @@ import {
 import { FiHome, FiMenu, FiChevronDown } from "react-icons/fi";
 import { RxButton } from "react-icons/rx";
 import { HiSelector } from "react-icons/hi";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub, BsInputCursorText } from "react-icons/bs";
 import { DiNpm } from "react-icons/di";
 import { IconType } from "react-icons";
+import { BiSpreadsheet } from "react-icons/bi";
 
 interface LinkItemProps {
   name: string;
@@ -42,8 +43,8 @@ const LinkItems: Array<LinkItemProps> = [
 const LinkItems2: Array<LinkItemProps> = [
   { name: "Buttons", icon: RxButton, link: "buttons" },
   { name: "Selectors", icon: HiSelector, link: "selectors" },
-  // { name: "Favourites", icon: FiStar, link: "buttons" },
-  // { name: "Settings", icon: FiSettings, link: "buttons" },
+  { name: "BottomSheet", icon: BiSpreadsheet, link: "bottomsheet" },
+  { name: "Input", icon: BsInputCursorText, link: "input" },
 ];
 
 export default function SiderBar({ children }: { children: ReactNode }) {

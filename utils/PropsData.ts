@@ -125,3 +125,65 @@ export const SeletorProps = [
     default: "()=>{}",
   },
 ];
+
+export const InputProps = [
+  {
+    name: "label",
+    type: "String",
+    required: "false",
+    default: "` `",
+  },
+  {
+    name: "labelTextStyle",
+    type: "StyleProp<TextStyle>",
+    required: "false",
+    default: `{
+      fontSize: 10,
+      color: "#000000",
+    }`,
+  },
+  {
+    name: "TextInputStyle",
+    type: "ViewStyle | object",
+    required: "false",
+    default: `{
+      backgroundColor: "white",
+      height: 50,
+      width: "100%",
+      }`,
+  },
+  {
+    name: "InputborderStyle",
+    type: " {borderWidth: number;borderColor: string;borderRadius: number} | object",
+    required: "false",
+    default: `{
+      borderWidth: 1,
+      borderColor: "#000000",
+      borderRadius: 10,
+    }`,
+  },
+  {
+    name: "placeholder",
+    type: "string",
+    required: "false",
+    default: "type here",
+  },
+  {
+    name: "placeholderTextColor",
+    type: "string",
+    required: "false",
+    default: `#000000`,
+  },
+  {
+    name: "Icon",
+    type: "ReactElement",
+    required: "false",
+    default: "",
+  },
+  {
+    name: "onChangeText",
+    type: "function | (text: string) => void",
+    required: "false",
+    default: "()=>{}",
+  },
+];
