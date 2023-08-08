@@ -23,7 +23,7 @@ export default function PropsTable({ data, caption }: Props) {
           return (
             <>
               <Tr>
-                <Td>{item?.name}</Td>
+                <Td style={{ color: "red" }}>{item?.name}</Td>
                 <Td>{item?.type}</Td>
                 <Td>{item?.required}</Td>
                 <Td>{item?.default}</Td>

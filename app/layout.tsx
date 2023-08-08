@@ -1,5 +1,6 @@
 /* eslint-disable react/no-children-prop */
 "use client";
+import { MyProvider } from "@/src/Context/Provider";
 import SiderBar from "@/src/Modules/Sidebar";
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -12,7 +13,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ChakraProvider>
-          <SiderBar children={children} />
+          <MyProvider>
+            <SiderBar children={children} />
+          </MyProvider>
         </ChakraProvider>
       </body>
     </html>

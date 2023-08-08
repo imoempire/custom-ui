@@ -172,7 +172,7 @@ export const InputProps = [
     name: "placeholderTextColor",
     type: "string",
     required: "false",
-    default: `#000000`,
+    default: `#A9A9AC`,
   },
   {
     name: "Icon",
@@ -185,5 +185,86 @@ export const InputProps = [
     type: "function | (text: string) => void",
     required: "false",
     default: "()=>{}",
+  },
+  {
+    name: "secureTextEntry",
+    type: "boolean",
+    required: "false",
+    default: "false",
+  },
+  {
+    name: "keyboardType",
+    type: `"default"
+    | "email-address"
+    | "numeric"
+    | "phone-pad"
+    | "ascii-capable"
+    | "numbers-and-punctuation"
+    | "url"
+    | "number-pad"
+    | "name-phone-pad"
+    | "decimal-pad"
+    | "twitter"
+    | "web-search"
+    | "visible-password"`,
+    required: "false",
+    default: "default",
+  },
+];
+
+export const CardProps = [
+  {
+    name: "children",
+    type: "any",
+    required: "false",
+    default: "",
+  },
+  {
+    name: "containerStyle",
+    type: "StyleProp<ViewStyle>",
+    required: "false",
+    default: `{
+      backgroundColor: "white",
+      borderWidth: 1,
+      padding: 15,
+      margin: 15,
+      borderColor: "grey",
+    }`,
+  },
+  {
+    name: "wrapperStyle",
+    type: "StyleProp<ViewStyle>",
+    required: "false",
+    default: ``,
+  },
+];
+
+// onClose?: () => void;
+// CloseOnBackdropPress?: boolean;
+
+export const ModalProps = [
+  {
+    name: "children",
+    type: "React.ReactNode",
+    required: "true",
+    default: "",
+  },
+  {
+    name: "isVisible",
+    type: "boolean",
+    required: "true",
+    default: `true`,
+  },
+  {
+    name: "onClose",
+    type: "() => void",
+    required: "false",
+    default: `() => {}`,
+  },
+  {
+    name: "CloseOnBackdropPress",
+    type: "StyleProp<ViewStyle>",
+    required: "false",
+    default: `true`,
   },
 ];
