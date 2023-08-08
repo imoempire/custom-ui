@@ -27,6 +27,7 @@ export default function ComponentPageLayout({
   componentProps = [],
 }: Props) {
   return (
+    
     <>
       <Stack bg={"#FFFFFF"} p="4" boxShadow="lg" m="4" borderRadius="sm">
         <Stack direction="row" alignItems="center">
